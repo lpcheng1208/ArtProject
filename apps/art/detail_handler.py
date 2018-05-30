@@ -18,4 +18,4 @@ def DetailHandler(request):
     else:
         art = Art.objects.get(id=int(id))
         context = {"art": art}
-        return render(request, "detail.html", context=context)
+        return render(request, "home/detail.html", context=context)

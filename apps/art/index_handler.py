@@ -8,10 +8,6 @@ __author__ = 'lpc'
 __date__ = '2018/5/29 15:03'
 
 
-def index(request):
-    return render(request, 'index.html')
-
-
 def IndexHandler(request):
     url = request.path
     print('IndexHandler:enter url:' + url)
@@ -95,4 +91,4 @@ def IndexHandler(request):
             page=page,
             t=t
         )
-    return render(request, "index.html", context=context)
+    return render(request, "home/index.html", context=context)

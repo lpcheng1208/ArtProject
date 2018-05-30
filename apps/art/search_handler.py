@@ -74,4 +74,4 @@ def SearchHandler(request):
         page=page
     )
 
-    return render(request, "search.html", context=context)
+    return render(request, "home/search.html", context=context)
