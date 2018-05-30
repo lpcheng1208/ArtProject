@@ -22,12 +22,13 @@ class Student(models.Model):
 class Tag(models.Model):
     t_name = models.CharField(max_length=255, verbose_name="标签名")
     t_info = models.CharField(max_length=300, verbose_name="标签描述")
-    t_createtime = models.DateTimeField(default=timezone.now, db_index=True)
+    t_createtime = models.DateTimeField(default=timezone.now, db_index=True, verbose_name="创建时间")
 
     def __str__(self):
         return self.t_name
 
     class Meta:
+        ordering = ['t_createtime']
         db_table = "t_tag"
         verbose_name = "tag"
 
@@ -38,8 +39,8 @@ class Art(models.Model):
     a_info = models.CharField(max_length=300, verbose_name="简介")
     a_content = models.TextField(verbose_name="内容")
     a_img = models.ImageField(null=True, blank=True, upload_to="uploads")
-    a_addtime = models.DateTimeField(default=timezone.now, db_index=True)
-    a_updatetime = models.DateTimeField(default=timezone.now)
+    a_addtime = models.DateTimeField(default=timezone.now, db_index=True, verbose_name="创建时间")
+    a_updatetime = models.DateTimeField(default=timezone.now, verbose_name="更改时间")
     a_tag = models.ForeignKey(Tag)
 
     def __str__(self):
@@ -47,4 +48,4 @@ class Art(models.Model):
 
     class Meta:
         db_table = "t_art"
-        ordering = ['-a_addtime']
+        ordering = ['a_addtime']

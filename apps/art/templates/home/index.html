@@ -25,11 +25,12 @@
                         <div class="artlist text-center">
                             <!--<img data-original="holder.js/262x166"
                                      class="img-responsive lazy center-block" alt="">-->
-                            <img data-original="/static/{{ v.a_img }}" style="width: 262%;x;"
+                            <img data-original="/static/{{ v.a_img }}" style="width: 262%;"
                                  class="img-responsive center-block lazy" alt="">
                             <div class="text-left" style="margin-left:auto;margin-right:auto;width:210px;">
                                 <span style="color:#999;font-style: italic;">{{ v.a_title }}</span><br>
-                                <p>{{ v.a_info }}</p>
+                                <p style="height: 20px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap">{{ v.a_info }}</p>
+
                             </div>
                             <a href="/art/detail?id={{ v.id }}" class="btn btn-primary" target="_blank" role="button">
                                 <span class="glyphicon glyphicon-eye-open"></span>&nbsp;阅读</a>
