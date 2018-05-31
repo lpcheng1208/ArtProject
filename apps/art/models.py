@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from DjangoUeditor.models import UEditorField
 
 
 # Create your models here.
@@ -38,7 +39,9 @@ class Tag(models.Model):
 class Art(models.Model):
     a_title = models.CharField(max_length=255, verbose_name="标题")
     a_info = models.CharField(max_length=300, verbose_name="简介")
-    a_content = models.TextField(verbose_name="内容")
+    a_content = UEditorField(verbose_name="文章内容", width=1000, height=600,
+                             imagePath="arts_ups/ueditor/", filePath="arts_ups/ueditor/",
+                             blank=True, toolbars="full", default='')
     a_img = models.ImageField(null=True, blank=True, upload_to="uploads")
     a_addtime = models.DateTimeField(default=timezone.now, db_index=True, verbose_name="创建时间")
     a_updatetime = models.DateTimeField(default=timezone.now, verbose_name="更改时间")

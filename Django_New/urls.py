@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^', include("art.urls")),
     url(r'art/', include('art.urls')),
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
 ]
