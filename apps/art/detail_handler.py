@@ -11,13 +11,13 @@ from Django_New.settings import logger
 
 
 def DetailHandler(request):
-    logger.info("IndexHandler request Handler begin")
+    # logger.info("IndexHandler request Handler begin")
     id = request.GET.get("id", None)
-    logger.debug('query total:' + str(id))
+    # logger.debug('query total:' + str(id))
     if id == None:
         return HttpResponseRedirect("/art/index")
     else:
         art = Art.objects.get(id=int(id))
         context = {"art": art}
-        logger.info("IndexHandler request Handler end")
+        # logger.info("IndexHandler request Handler end")
         return render(request, "home/detail.html", context=context)
