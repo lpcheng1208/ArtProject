@@ -38,7 +38,7 @@ def IndexHandler(request):
         t=t
     )
     if total > 0:
-        shownum = 20
+        shownum = 1
         import math
         pagenum = int(math.ceil(total / shownum))
         if page < 1:

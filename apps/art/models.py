@@ -30,7 +30,8 @@ class Tag(models.Model):
     class Meta:
         ordering = ['t_createtime']
         db_table = "t_tag"
-        verbose_name = "标签"
+        # verbose_name = "标签"
+        verbose_name_plural = "标签"
 
 
 # 文章类
@@ -49,4 +50,5 @@ class Art(models.Model):
     class Meta:
         db_table = "t_art"
         ordering = ['a_addtime']
-        verbose_name = "文章"
+        # verbose_name = "文章"
+        verbose_name_plural = "文章"
