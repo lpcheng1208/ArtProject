@@ -42,7 +42,7 @@ class Art(models.Model):
     a_content = UEditorField(verbose_name="文章内容", width=1000, height=600,
                              imagePath="arts_ups/ueditor/", filePath="arts_ups/ueditor/",
                              blank=True, toolbars="full", default='')
-    a_img = models.ImageField(null=True, blank=True, upload_to="uploads")
+    a_img = models.ImageField(null=True, blank=True, upload_to="arts_ups/%Y-%m-%d/")
     a_addtime = models.DateTimeField(default=timezone.now, db_index=True, verbose_name="创建时间")
     a_updatetime = models.DateTimeField(default=timezone.now, verbose_name="更改时间")
     a_tag = models.ForeignKey(Tag)
