@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^', include("art.urls")),
     url(r'art/', include('art.urls')),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
+    url(r'^message/', include("message.urls"))
 ]

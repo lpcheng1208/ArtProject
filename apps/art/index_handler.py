@@ -10,7 +10,6 @@ __date__ = '2018/5/29 15:03'
 
 def IndexHandler(request):
     url = request.path
-    print('IndexHandler:enter url:' + url)
     tags = Tag.objects.all()
 
     # 文章列表
